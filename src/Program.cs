@@ -25,7 +25,9 @@ namespace validador
                 string nombre = pk.Certificates[0].SubjectDN.GetValueList(new Org.BouncyCastle.Asn1.DerObjectIdentifier(Constantes.OID_GIVEN_NAME))[0].ToString();
                 string apellidos = pk.Certificates[0].SubjectDN.GetValueList(new Org.BouncyCastle.Asn1.DerObjectIdentifier(Constantes.OID_SURNAME))[0].ToString();
 
-                Console.WriteLine("Firma Verificada: " + pk.Verify());
+                Console.WriteLine("Firma Verificada: " + pk.Verify()); 
+                //TODO: Validar la cadena del certifica sea de Costa Rica
+                Console.WriteLine("IMPORTANTE - NO IMPLEMENTADO: SE DEBE VALIDAR LA CADENA DEL CERTIFICADO DE COSTA RICA");
                 Console.WriteLine($"Nombre del certificado: {nombreCertificado}");
                 Console.WriteLine($"Cedula: {cedula}");
                 Console.WriteLine($"Nombre: {nombre}");
